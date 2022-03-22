@@ -1,0 +1,150 @@
+/* initialize */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1rem;
+}
+
+.col {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 0 1rem;
+}
+
+.col-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 1rem;
+}
+
+/* header */
+header {
+  width: 100%;
+  background-color: #EEEEEE;
+}
+
+header .logo {
+  padding: 1.5rem 0;
+}
+
+nav.small-device {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 100%;
+}
+
+nav.small-device img{
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+
+nav.big-device {
+  display: none;
+}
+
+nav.big-device ul {
+  justify-content: end;
+}
+
+nav.big-device li {
+  padding: 1.5rem 0 1.5rem 1.5rem;
+  cursor: pointer;
+}
+
+/* main */
+main {
+  width: 100%;
+}
+
+main>section:first-child {
+  text-align: center;
+  height: 13rem;
+  line-height: 13rem;
+  background-color: #E8F0FE;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+main .product .title {
+  text-align: center;
+  padding: 3rem 0;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+main .product .col {
+  height: 8.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+main .product .item {
+  height: 100%;
+  background-color: #8899AA;
+}
+
+/* footer */
+footer {
+  margin-top: auto;
+}
+
+footer .social-media {
+  padding-bottom: 2rem;
+}
+
+footer input {
+  padding: 1rem;
+  background-color: #DDEEFF;
+  border: none;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+@media screen and (min-width: 800px) {
+  nav.small-device {
+    display: none;
+  }
+
+  nav.big-device {
+    display: block;
+  }
+
+  nav.big-device ul{
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 1rem;
+  }
+}
