@@ -4,8 +4,8 @@ block content
   if name
     h1 Welcome #{name}!
   else
-    form(action="/myName" method="POST")
-      input(type="text", name="username", placeholder="Username")
+    form(action="/trackName" method="POST")
+      input(type="text", name="name", placeholder="Username")
       input(type="password", name="password", placeholder="Password")
       button(type="submit") Submit
       p= error
