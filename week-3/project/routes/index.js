@@ -1,6 +1,17 @@
 const express = require('express');
 const router = express.Router();
 
+const verifyValue = (name, password, res) => {
+  let trimName = name.trim();
+  let trimPassword = password.trim();
+  if (trimName.length > 0 && trimPassword.length > 0) {
+    res.cookie('name', trimName);
+    res.render('myName', { name: trimName });
+  } else {
+    res.render('myName', { error: `Name and password can't be empty!` });
+  }
+}
+
 /* GET home page. */
 router.get('/', function (req, res, next) {
   res.render('index', { title: 'Hello, My Server!' });
@@ -23,30 +34,15 @@ router.get('/getData', function (req, res, next) {
   }
 });
 
-router.get('/trackName', function (req, res, next) {
+router.get('/myName', function (req, res, next) {
   let { name } = req.cookies;
-  if (!name) {
-    res.render('myName');
-  } else {
-    res.redirect(`/${name}`);
-  }
+  if (!name) return res.render('myName');
+  res.render('myName', { name });
 })
 
-router.post('/trackName', function (req, res, next) {
+router.post('/myName', function (req, res, next) {
   let { name, password } = req.body;
-  name = name.trim();
-  password = password.trim();
-  if (name.length > 0 && password.length > 0) {
-    res.render('myName', { name });
-  } else {
-    res.render('myName', { error: `Name and password can't be empty!` });
-  }
-})
-
-router.get('/:myName', function (req, res, next) {
-  let { myName } = req.params;
-  res.cookie('name', myName);
-  res.render('myName', { name: myName });
+  verifyValue(name, password, res);
 })
 
 module.exports = router;
