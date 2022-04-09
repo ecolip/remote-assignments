@@ -6,7 +6,7 @@ const verifyValue = (name, password, res) => {
   let trimPassword = password.trim();
   if (trimName.length > 0 && trimPassword.length > 0) {
     res.cookie('name', trimName);
-    res.render('myName', { name: trimName });
+    res.redirect('/myName');
   } else {
     res.render('myName', { error: `Name and password can't be empty!` });
   }
@@ -40,7 +40,7 @@ router.get('/myName', function (req, res, next) {
   res.render('myName', { name });
 })
 
-router.post('/myName', function (req, res, next) {
+router.post('/trackName', function (req, res, next) {
   let { name, password } = req.body;
   verifyValue(name, password, res);
 })
