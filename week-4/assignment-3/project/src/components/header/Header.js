@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid*/ //disable the a taq to be a valid anchor tag
 import React, { useState } from "react";
-import navIcon from "../../imgs/nav.png";
-import deleteIcon from "../../imgs/delete.png";
+import openIcon from "../../imgs/openNav.png";
+import closeIcon from "../../imgs/closeNav.png";
 import './Header.css';
 
 function Header() {
@@ -20,7 +20,7 @@ function Header() {
       <div className="container-header">
         <div className="logo">website title / logo</div>
         <nav className="small-device" onClick={() => { openNav() }}>
-          <img src={navIcon} alt="navigation" />
+          <img src={openIcon} alt="navigation" />
         </nav>
         <nav className="big-device">
           <ul>
@@ -39,7 +39,7 @@ function Header() {
           <li><a href="">item 4</a></li>
         </ul>
         <div className="close" onClick={() => { closeNav() }}>
-          <img src={deleteIcon} alt="recover" />
+          <img src={closeIcon} alt="recover" />
         </div>
       </nav>
     </header>
