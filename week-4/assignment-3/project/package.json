@@ -1,6 +1,5 @@
 {
   "name": "project",
-  "homepage": "https://ecolip.github.io/remote-assignments",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
